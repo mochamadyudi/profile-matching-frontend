@@ -1,0 +1,16 @@
+{
+  "account_number": "8808999967034797",
+  "bank_code": "BNI",
+  "country": "ID",
+  "currency": "IDR",
+  "expected_amount": 10000,
+  "expiration_date": "2023-05-20T19:21:01.000Z",
+  "external_id": "INV-CPT-000004",
+  "id": "6467cc1da97fb1095f8b790f",
+  "is_closed": true,
+  "is_single_use": true,
+  "merchant_code": "8808",
+  "name": "XDT-Mochamad Yudi Sobari",
+  "owner_id": "63cacf8c8d65773e115a7ae4",
+  "status": "PENDING"
+}

@@ -1,0 +1,308 @@
+{
+  "status": 200,
+  "message": "OK",
+  "paginate": null,
+  "data": [
+    {
+      "id": 7,
+      "airline": {
+        "code": "grd-001",
+        "display_name": "Garuda Indonesia",
+        "image": {
+          "id": 1,
+          "url": "https://fids.com/assets/image/airlines/garuda-indonesia.png"
+        }
+      },
+      "origin": {
+        "code": "JKT01",
+        "display_name": "Jakarta"
+      },
+      "flight_no": "HKT-112",
+      "date": "2023-03-12",
+      "schedule_time": "11:30",
+      "actual_time": "11:30",
+      "status": "scheduled"
+    },
+    {
+      "id": 7,
+      "airline": {
+        "code": "grd-001",
+        "display_name": "Garuda Indonesia",
+        "image": {
+          "id": 1,
+          "url": "https://fids.com/assets/image/airlines/garuda-indonesia.png"
+        }
+      },
+      "origin": {
+        "code": "JKT01",
+        "display_name": "Jakarta"
+      },
+      "flight_no": "HKT-112",
+      "date": "2023-03-12",
+      "schedule_time": "11:30",
+      "actual_time": "11:30",
+      "status": "scheduled"
+    },
+    {
+      "id": 7,
+      "airline": {
+        "code": "grd-001",
+        "display_name": "Garuda Indonesia",
+        "image": {
+          "id": 1,
+          "url": "https://fids.com/assets/image/airlines/garuda-indonesia.png"
+        }
+      },
+      "origin": {
+        "code": "JKT01",
+        "display_name": "Jakarta"
+      },
+      "flight_no": "HKT-112",
+      "date": "2023-03-12",
+      "schedule_time": "11:30",
+      "actual_time": "11:30",
+      "status": "scheduled"
+    },
+    {
+      "id": 7,
+      "airline": {
+        "code": "grd-001",
+        "display_name": "Garuda Indonesia",
+        "image": {
+          "id": 1,
+          "url": "https://fids.com/assets/image/airlines/garuda-indonesia.png"
+        }
+      },
+      "origin": {
+        "code": "JKT01",
+        "display_name": "Jakarta"
+      },
+      "flight_no": "HKT-112",
+      "date": "2023-03-12",
+      "schedule_time": "11:30",
+      "actual_time": "11:30",
+      "status": "scheduled"
+    },
+    {
+      "id": 7,
+      "airline": {
+        "code": "grd-001",
+        "display_name": "Garuda Indonesia",
+        "image": {
+          "id": 1,
+          "url": "https://fids.com/assets/image/airlines/garuda-indonesia.png"
+        }
+      },
+      "origin": {
+        "code": "JKT01",
+        "display_name": "Jakarta"
+      },
+      "flight_no": "HKT-112",
+      "date": "2023-03-12",
+      "schedule_time": "11:30",
+      "actual_time": "11:30",
+      "status": "scheduled"
+    },
+    {
+      "id": 7,
+      "airline": {
+        "code": "grd-001",
+        "display_name": "Garuda Indonesia",
+        "image": {
+          "id": 1,
+          "url": "https://fids.com/assets/image/airlines/garuda-indonesia.png"
+        }
+      },
+      "origin": {
+        "code": "JKT01",
+        "display_name": "Jakarta"
+      },
+      "flight_no": "HKT-112",
+      "date": "2023-03-12",
+      "schedule_time": "11:30",
+      "actual_time": "11:30",
+      "status": "scheduled"
+    },
+    {
+      "id": 7,
+      "airline": {
+        "code": "grd-001",
+        "display_name": "Garuda Indonesia",
+        "image": {
+          "id": 1,
+          "url": "https://fids.com/assets/image/airlines/garuda-indonesia.png"
+        }
+      },
+      "origin": {
+        "code": "JKT01",
+        "display_name": "Jakarta"
+      },
+      "flight_no": "HKT-112",
+      "date": "2023-03-12",
+      "schedule_time": "11:30",
+      "actual_time": "11:30",
+      "status": "scheduled"
+    },
+    {
+      "id": 7,
+      "airline": {
+        "code": "grd-001",
+        "display_name": "Garuda Indonesia",
+        "image": {
+          "id": 1,
+          "url": "https://fids.com/assets/image/airlines/garuda-indonesia.png"
+        }
+      },
+      "origin": {
+        "code": "JKT01",
+        "display_name": "Jakarta"
+      },
+      "flight_no": "HKT-112",
+      "date": "2023-03-12",
+      "schedule_time": "11:30",
+      "actual_time": "11:30",
+      "status": "scheduled"
+    },
+    {
+      "id": 7,
+      "airline": {
+        "code": "grd-001",
+        "display_name": "Garuda Indonesia",
+        "image": {
+          "id": 1,
+          "url": "https://fids.com/assets/image/airlines/garuda-indonesia.png"
+        }
+      },
+      "origin": {
+        "code": "JKT01",
+        "display_name": "Jakarta"
+      },
+      "flight_no": "HKT-112",
+      "date": "2023-03-12",
+      "schedule_time": "11:30",
+      "actual_time": "11:30",
+      "status": "scheduled"
+    },
+    {
+      "id": 7,
+      "airline": {
+        "code": "grd-001",
+        "display_name": "Garuda Indonesia",
+        "image": {
+          "id": 1,
+          "url": "https://fids.com/assets/image/airlines/garuda-indonesia.png"
+        }
+      },
+      "origin": {
+        "code": "JKT01",
+        "display_name": "Jakarta"
+      },
+      "flight_no": "HKT-112",
+      "date": "2023-03-12",
+      "schedule_time": "11:30",
+      "actual_time": "11:30",
+      "status": "scheduled"
+    },
+    {
+      "id": 7,
+      "airline": {
+        "code": "grd-001",
+        "display_name": "Garuda Indonesia",
+        "image": {
+          "id": 1,
+          "url": "https://fids.com/assets/image/airlines/garuda-indonesia.png"
+        }
+      },
+      "origin": {
+        "code": "JKT01",
+        "display_name": "Jakarta"
+      },
+      "flight_no": "HKT-112",
+      "date": "2023-03-12",
+      "schedule_time": "11:30",
+      "actual_time": "11:30",
+      "status": "scheduled"
+    },
+    {
+      "id": 7,
+      "airline": {
+        "code": "grd-001",
+        "display_name": "Garuda Indonesia",
+        "image": {
+          "id": 1,
+          "url": "https://fids.com/assets/image/airlines/garuda-indonesia.png"
+        }
+      },
+      "origin": {
+        "code": "JKT01",
+        "display_name": "Jakarta"
+      },
+      "flight_no": "HKT-112",
+      "date": "2023-03-12",
+      "schedule_time": "11:30",
+      "actual_time": "11:30",
+      "status": "scheduled"
+    },
+    {
+      "id": 7,
+      "airline": {
+        "code": "grd-001",
+        "display_name": "Garuda Indonesia",
+        "image": {
+          "id": 1,
+          "url": "https://fids.com/assets/image/airlines/garuda-indonesia.png"
+        }
+      },
+      "origin": {
+        "code": "JKT01",
+        "display_name": "Jakarta"
+      },
+      "flight_no": "HKT-112",
+      "date": "2023-03-12",
+      "schedule_time": "11:30",
+      "actual_time": "11:30",
+      "status": "scheduled"
+    },
+    {
+      "id": 7,
+      "airline": {
+        "code": "grd-001",
+        "display_name": "Garuda Indonesia",
+        "image": {
+          "id": 1,
+          "url": "https://fids.com/assets/image/airlines/garuda-indonesia.png"
+        }
+      },
+      "origin": {
+        "code": "JKT01",
+        "display_name": "Jakarta"
+      },
+      "flight_no": "HKT-112",
+      "date": "2023-03-12",
+      "schedule_time": "11:30",
+      "actual_time": "11:30",
+      "status": "scheduled"
+    },
+    {
+      "id": 7,
+      "airline": {
+        "code": "grd-001",
+        "display_name": "Garuda Indonesia",
+        "image": {
+          "id": 1,
+          "url": "https://fids.com/assets/image/airlines/garuda-indonesia.png"
+        }
+      },
+      "origin": {
+        "code": "JKT01",
+        "display_name": "Jakarta"
+      },
+      "flight_no": "HKT-112",
+      "date": "2023-03-12",
+      "schedule_time": "11:30",
+      "actual_time": "11:30",
+      "status": "scheduled"
+    }
+  ],
+  "success": true
+}

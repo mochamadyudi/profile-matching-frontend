@@ -1,0 +1,41 @@
+{
+  "status": 200,
+  "message": "OK",
+  "params": {
+    "page": 1,
+    "limit": 10
+  },
+  "pagination": {
+    "page": 1,
+    "limit": 10,
+    "max_page": 1,
+    "total": 10
+  },
+  "data": [
+    {
+      "name": "Classic 1",
+      "slug": "classic-1",
+      "categories": {
+        "id": 1,
+        "name": "Pernikahan",
+        "slug": "pernikahan",
+        "status": "active"
+      },
+      "featured_image": null,
+      "status": "publish"
+    },
+    {
+      "name": "Classic 2",
+      "slug": "classic-2",
+      "categories": {
+        "id": 1,
+        "name": "Pernikahan",
+        "slug": "pernikahan",
+        "status": "active"
+      },
+      "featured_image": null,
+      "status": "publish"
+    }
+  ],
+  "success": true
+}

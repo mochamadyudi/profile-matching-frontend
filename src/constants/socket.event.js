@@ -1,0 +1,1 @@
+export const ON_DISPLAY_SYS_PUSH = "CUSTOM_EVENT"

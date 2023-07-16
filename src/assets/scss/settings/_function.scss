@@ -1,0 +1,22 @@
+// @author Mochamad Yudi Sobari
+// @github https://github.com/mochamadyudi
+// @email yuyuid.id12@gmail.com
+// @contact +6285718851007
+
+@function invert($color, $amount: 100%) {
+  $inverse: change-color($color, $hue: hue($color) + 180);
+  @return mix($inverse, $color, $amount);
+}
+
+@function themed($key) {
+  @return map-get($theme-map, $key);
+}
+
+
+@function px-converter($px-value, $convertTo: 'em', $base-font-size: 16px){
+  @if $convertTo == 'em'{
+    @return ($px-value / $base-font-size) * 1em;
+  } @else{
+    @return ($px-value / $base-font-size) * 1rem;
+  }
+}

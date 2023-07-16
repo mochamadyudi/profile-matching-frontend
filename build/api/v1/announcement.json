@@ -1,0 +1,57 @@
+{
+  "data": [
+    {
+      "title": "Penerbangan A Ke B",
+      "data": {
+        "en": {
+          "title": "Penerbangan",
+          "description": "Lorem ipsum dolor sit amet",
+          "data": [
+            {
+              "key": "pengumuman",
+              "title": "Pengumuman",
+              "url": "/announcement-0.mp3"
+            },
+            {
+              "key": "pesawat",
+              "title": "Pesawat",
+              "url": "/announcement-1.mp3"
+            }
+          ]
+        },
+        "id": {
+          "title": "Penerbangan",
+          "description": "Lorem ipsum dolor sit amet",
+          "data": [
+            {
+              "key": "pengumuman",
+              "title": "Pengumuman",
+              "url": "/announcement-0.mp3"
+            },
+            {
+              "key": "pesawat",
+              "title": "Pesawat",
+              "url": "/announcement-1.mp3"
+            }
+          ]
+        },
+        "locale": {
+          "title": "Penerbangan",
+          "description": "Lorem ipsum dolor sit amet",
+          "data": [
+            {
+              "key": "pengumuman",
+              "title": "Pengumuman",
+              "url": "/announcement-0.mp3"
+            },
+            {
+              "key": "pesawat",
+              "title": "Pesawat",
+              "url": "/announcement-1.mp3"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

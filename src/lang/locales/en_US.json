@@ -1,0 +1,21 @@
+{
+	"home": "Home",
+	"invitation.book": "Invitation Book",
+	"visitor": "Visitor",
+	"send.invitations": "Send Invitations",
+	"donation": "Donation",
+	"donations": "Donations",
+	"settings": "Settings",
+	"quota": "Quota",
+	"invitation": "Invitation",
+	"series.of.events": "Series Of Events",
+	"request.withdrawal": "Request Withdrawal",
+	"save": "Save",
+
+	"payment.code": "Payment Code",
+	"sender": "Sender",
+	"payment.date": "Payment Date",
+	"withdrawal.status": "Withdrawal Status",
+	"payment.status": "Payment Status",
+	"amount": "Amount"
+}

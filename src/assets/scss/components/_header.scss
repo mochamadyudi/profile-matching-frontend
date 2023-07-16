@@ -1,0 +1,62 @@
+// @author Mochamad Yudi Sobari
+// @github https://github.com/mochamadyudi
+// @email yuyuid.id12@gmail.com
+// @contact +6285718851007
+
+@include element('app','page'){
+  @include extendBlock('header','-'){
+    width: calc(100% ) !important;
+    margin: 0 -0px !important;
+    @include themify($themes){
+      background: themed('card') !important;
+    }
+  }
+}
+@include element('app','navbar'){
+  transition: .2s;
+
+  @include extendBlock('sider','-'){
+    transition:.2s;
+    overflow:hidden;
+    height:100%;
+    width:200px;
+
+    h1{
+      transition:.2s;
+    }
+    div{
+      transition:.2s;
+      margin:0 !important;
+      overflow: hidden;
+      width: 40px;
+      height:40px !important;
+      background: rgba(255, 191, 53, 0.88);
+      border-radius:50%;
+    }
+
+  }
+
+  @include extendBlock('collapse','-'){
+    transition:.2s;
+
+    @include element('app','navbar'){
+      @include extendBlock('sider','-'){
+        width:50px;
+        overflow: hidden;
+
+        div{
+          margin: 0 5px !important;
+          transition:.2s;
+        }
+
+        h1{
+          display: none;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+        }
+      }
+    }
+
+  }
+}

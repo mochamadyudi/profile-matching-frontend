@@ -1,0 +1,6 @@
+export const AUDIO_SELECT_AND_PLAY = "AUDIO_SELECT_AND_PLAY";
+export const AUDIO_PLAY = "AUDIO_PLAY";
+export const AUDIO_STOP = "AUDIO_STOP";
+export const AUDIO_PAUSE = "AUDIO_PAUSE";
+
+export const PLAYER_CLOSED = "PLAYER_CLOSED";

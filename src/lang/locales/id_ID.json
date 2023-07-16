@@ -1,0 +1,21 @@
+{
+  "home": "Beranda",
+  "invitation.book": "Buku Tamu",
+  "visitor": "Tamu",
+  "send.invitations": "Kirim Undangan",
+  "donation": "Donasi",
+  "donations": "Donasi",
+  "settings": "Pengaturan",
+  "quota": "Kuota",
+  "invitation": "Undangan",
+  "series.of.events": "Rangkaian Acara",
+  "request.withdrawal": "meminta penarikan",
+  "save": "Simpan",
+
+  "payment.code": "Kode Pembayaran",
+  "sender": "Pengirim",
+  "payment.date": "Tanggal Pembayaran",
+  "withdrawal.status": "Status Penarikan",
+  "payment.status": "Status Pembayaran",
+  "amount": "Jumlah"
+}

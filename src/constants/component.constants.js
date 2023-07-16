@@ -1,0 +1,1 @@
+export const PERMISSION_ONE_OF = ['admin','operator','public','guest']

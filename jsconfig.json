@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "baseUrl": "src",
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "paths": {
+      "@yid/config": ["./src/config"],
+      "@yid/components": ["./src/components"],
+      "@yid/components/loading": ["./src/components/shared-components/Loading"]
+    }
+  },
+  "include": ["src"],
+  "exclude": ["node_modules"]
+}

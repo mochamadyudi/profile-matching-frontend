@@ -1,0 +1,91 @@
+// @author Mochamad Yudi Sobari
+// @github https://github.com/mochamadyudi
+// @email yuyuid.id12@gmail.com
+// @contact +6285718851007
+
+@import "display";
+@import "grid";
+@import "header";
+@import "button";
+
+.mk{
+  &-cursor{
+    &-point{
+      cursor: pointer !important;
+    }
+  }
+}
+
+.yid{
+  &-editor{
+    &--component{
+      position: relative;
+      &-btn{
+        height: 40px;
+        width: 40px;
+        position: absolute;
+        top:10px;
+        z-index: 1;
+        right:10px;
+        border-radius: 10px;
+        background:rgba(229,75,82,.6);
+        transition:.2s;
+        transform: scale(.8);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        color:#fff;
+
+
+        &:hover{
+          transform: scale(1);
+          background:rgba(229,75,82,1);
+          transition:.2s;
+        }
+      }
+      &-img{
+        z-index: 0;
+        padding: 0 !important; margin: 0 !important;
+        height: 250px !important;
+        overflow: hidden;
+        border-radius:10px;
+        box-shadow: 0 0 10px rgba(222,222,222,.5);
+
+
+        .ant{
+          &-image{
+            width: 100% !important;
+            min-height: 250px !important;
+            height: 100% !important;
+            margin:0 !important;
+            padding: 0 !important;
+            img{
+              margin: 0 !important;
+              height: 100% !important;
+              min-height: 250px !important;
+              width: 100% !important;
+
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+.yid{
+  &-img{
+    &-uploads{
+      > span {
+        width: 100%;
+      }
+      width: 100% !important;
+      div {
+        width: 100%;
+      }
+    }
+  }
+}

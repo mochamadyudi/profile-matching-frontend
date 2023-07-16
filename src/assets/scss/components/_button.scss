@@ -1,0 +1,108 @@
+$button-class: (
+        primary:(
+                background: $color-accent,
+
+        ),
+        danger:(
+                background: $color-accent
+        ),
+);
+
+@include element('app', 'btn') {
+  @extend %button;
+  @each $class, $map in $button-class{
+    @each $key, $submap in $map {
+      @include extendBlock($class,'-'){
+        $key:$submap;
+      }
+    }
+  }
+}
+
+
+.yid{
+  &-btn{
+    &-animation{
+      border:0 !important;
+      outline: none !important;
+      padding: 0 !important;
+      overflow: hidden;
+      display: flex !important;
+      align-items: center;
+      cursor: pointer;
+      border-radius:20px;
+      max-height: 40px;
+      width: 40px;
+      background:#edf2f9;
+      // column-gap:5px !important;
+      position: relative !important;
+      transition:.2s;
+
+      &:focus{
+        background:rgba(62,121,247,.2) !important;
+        .yid{
+          &-btn{
+            &-icon{
+              pointer-events: none;
+              background:rgba(62,121,247,.6) !important;
+              color:rgba(62,121,247,1) !important;
+              transition:.2s;
+            }
+            &-hover{
+              color:rgba(62,121,247,.8) !important;
+              pointer-events: none;
+              right: 0;
+              opacity: 1;
+            }
+          }
+        }
+      }
+      &:hover{
+
+        width:140px;
+        .yid{
+          &-btn{
+            &-icon{
+              pointer-events: none;
+              background:#3e79f7;
+              color:#fff;
+              transition:.2s;
+            }
+            &-hover{
+              pointer-events: none;
+              right: 0;
+              opacity: 1;
+            }
+          }
+        }
+      }
+      .yid{
+        &-btn{
+
+          &-icon{
+            pointer-events: none;
+            border:1px solid #3e79f7;
+            color:#3e79f7;
+            transition:.2s;
+            height:40px;
+            width: 40px;
+            min-width: 40px;
+            border-radius:20px;
+            background:#ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+          &-hover{
+            pointer-events: none;
+            padding:0 10px;
+            transition:.2s;
+            position: relative;
+            right:-100%;
+            opacity: 0;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "status": 200,
+  "message": "OK",
+  "paginate": null,
+  "data": [
+    {
+      "id": 7,
+      "opt_type": "city",
+      "opt_value": {
+        "code": "JKT01",
+        "display_name": "Jakarta"
+      },
+      "opt_name": "jakarta"
+    },
+    {
+      "id": 7,
+      "opt_type": "city",
+      "opt_value": {
+        "code": "JKT01",
+        "display_name": "Jakarta"
+      },
+      "opt_name": "jakarta"
+    },
+    {
+      "id": 7,
+      "opt_type": "city",
+      "opt_value": {
+        "code": "JKT01",
+        "display_name": "Jakarta"
+      },
+      "opt_name": "jakarta"
+    },
+    {
+      "id": 7,
+      "opt_type": "city",
+      "opt_value": {
+        "code": "JKT01",
+        "display_name": "Jakarta"
+      },
+      "opt_name": "jakarta"
+    },
+    {
+      "id": 7,
+      "opt_type": "city",
+      "opt_value": {
+        "code": "JKT01",
+        "display_name": "Jakarta"
+      },
+      "opt_name": "jakarta"
+    },
+    {
+      "id": 7,
+      "opt_type": "city",
+      "opt_value": {
+        "code": "JKT01",
+        "display_name": "Jakarta"
+      },
+      "opt_name": "jakarta"
+    },
+    {
+      "id": 7,
+      "opt_type": "city",
+      "opt_value": {
+        "code": "JKT01",
+        "display_name": "Jakarta"
+      },
+      "opt_name": "jakarta"
+    },
+    {
+      "id": 7,
+      "opt_type": "city",
+      "opt_value": {
+        "code": "JKT01",
+        "display_name": "Jakarta"
+      },
+      "opt_name": "jakarta"
+    }
+  ],
+  "success": true
+}

@@ -1,0 +1,26 @@
+@import './styles/variables/_colors.less';
+@import './styles/components/feedback/_spin.less';
+
+.app-global-loading{
+    display:none;
+
+    &.show{
+        background: rgba(255, 255, 255, 0.71);
+        display:flex !important;
+        align-items:center;
+        justify-content: center;
+        position: absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        z-index:999;
+    }
+}
+
+.loading {
+
+    .ant-spin {
+        color: @primary-color;
+    }
+}
