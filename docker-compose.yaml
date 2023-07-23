@@ -22,8 +22,8 @@ services:
     networks:
       - skripsi_fe
 volumes:
-  fids_fe:
+  skripsi_fe:
     driver: local
 networks:
-  fids_fe:
+  skripsi_fe:
     driver: bridge
