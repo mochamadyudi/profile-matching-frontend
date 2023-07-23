@@ -5,21 +5,22 @@ services:
       - .env
     environment:
       NODE_ENV: production
-      PORT: 4004
+      PORT: 8001
+      REACT_APP_TITLE: 'SKRIPSI'
       SKIP_PREFLIGHT_CHECK: 'true'
-      REACT_APP_API_MASTER: 'http://68.183.234.66:5008'
-      REACT_APP_HOST_SOCKET: '68.183.234.66:5008'
+      REACT_APP_API_MASTER: 'http://68.183.234.66:8000'
+      REACT_APP_HOST_SOCKET: '68.183.234.66:8000'
     image: fe_react
     container_name: fids_fe
     build:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "4004:4004"
+      - "8001:8001"
     volumes:
-      - fids_fe:/var/opt/fids_fe
+      - skripsi_fe:/var/opt/skripsi_fe
     networks:
-      - fids_fe
+      - skripsi_fe
 volumes:
   fids_fe:
     driver: local
