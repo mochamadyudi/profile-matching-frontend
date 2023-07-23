@@ -10,8 +10,8 @@ services:
       SKIP_PREFLIGHT_CHECK: 'true'
       REACT_APP_API_MASTER: 'http://68.183.234.66:8000'
       REACT_APP_HOST_SOCKET: '68.183.234.66:8000'
-    image: fe_react
-    container_name: fids_fe
+    image: skripsi_fe
+    container_name: skripsi_fe
     build:
       context: .
       dockerfile: Dockerfile

@@ -60,9 +60,8 @@ export const Views = (props) => {
               <AuthLayout direction={direction} />
             </Route>
             <Route path={'/'}>
-              <Redirect to={DASHBOARD_PREFIX_PATH}/>
+              <Redirect to={AUTH_PREFIX_PATH}/>
             </Route>
-
           </Switch>
         </UseAuth>
       </ConfigProvider>
