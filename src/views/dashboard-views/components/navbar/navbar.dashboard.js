@@ -98,11 +98,11 @@ export const NavbarDashboard = props => {
 						<div className={'!mk-h-full !mk-flex !mk-items-center !mk-justify-center'}>
 							<button type={'button'} name={'monitoring-app'}
 							        onClick={() => {
-								        history.replace('/monitoring')
+								        history.replace('/app')
 							        }}
 							        className={'yid-btn-animation'}>
 								<DesktopOutlined className={'yid-btn-icon'}/>
-								<span className={'yid-btn-hover rightToLeft'}>Monitoring</span>
+								<span className={'yid-btn-hover rightToLeft'}>Landing Page</span>
 							</button>
 						</div>
 						<NavProfile {...props}/>

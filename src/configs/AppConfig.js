@@ -1,7 +1,7 @@
 import {SIDE_NAV_LIGHT, NAV_TYPE_SIDE, DIR_LTR, NAV_TYPE_TOP, SIDE_NAV_DARK} from 'constants/ThemeConstant';
 import { env } from './EnvironmentConfig'
 
-export const APP_NAME = 'Cipta Grafika';
+export const APP_NAME = 'Skripsi';
 export const API_BASE_URL = env.API_ENDPOINT_URL
 export const APP_PREFIX_PATH = '/';
 export const APP_EDITOR_PREFIX_PATH = '/editor';

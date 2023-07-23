@@ -33,7 +33,7 @@ function Index()  {
 		page:1,
 		limit:10
 	})
-	const [ data, setData] = useState([])
+	let [ data, setData] = useState([])
 	const [ visible, setVisible ] = useState(false)
 	const [ selected, setSelected ] = useState(null)
 	
@@ -123,6 +123,7 @@ function Index()  {
 					</Tooltip>
 					<Tooltip title="Delete">
 						<Button danger icon={<DeleteOutlined/>} onClick={() => {
+							onDelete(_)
 							// this.deleteUser(elm.id)
 						}} size="small"/>
 					</Tooltip>
@@ -185,10 +186,32 @@ function Index()  {
 			})
 	}
 	
+	
+	function onDelete(id){
+		setLoading(true)
+		new ApiService({
+			url:`/api/v1/master-data/criteria/${id}`,
+		}).delete()
+			.then((response)=> {
+				if(!response?.error){
+					message.success(response?.message ?? "Successfully")
+					let findIndex = data.findIndex((child)=> child?.id === id)
+					if(findIndex !== -1){
+						data.splice(findIndex,1)
+					}
+					setData([...data])
+				}else{
+					message.error(response?.message ?? `Error: delete ${id}`)
+				}
+				setLoading(false)
+			})
+			.catch((err)=> {
+				setLoading(false)
+				message.error(err?.message ?? `Error: delete ${id}`)
+			})
+	}
 	return (
 		<React.Fragment>
-			
-			<pre>{JSON.stringify(selected,null,2)}</pre>
 			<Modal visible={visible} title={'Edit'} onCancel={onClose} onOk={onFinish}>
 				<Form
 					form={form}

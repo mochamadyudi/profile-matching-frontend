@@ -17,7 +17,6 @@ const themes = {
 };
 
 function App() {
-  console.log({THEME_CONFIG})
   return (
     <div className="App">
       <Provider store={store}>

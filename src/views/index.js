@@ -17,8 +17,15 @@ import {SocketConnect, SocketDisconnect} from "../redux/actions/websocket.action
 import {GetGeneralSetting, getSite} from "../redux/actions/Settings";
 import {LoadUser} from "../redux/actions/Auth";
 
+/**
+ * @typedef CALC_GAP
+ * @property {number} id
+ * @property {number} gap
+ * @property {number} weight
+ */
 export const Views = (props) => {
-  let { SocketConnect, SocketDisconnect,LoadUser, getSite, GetGeneralSetting} = props
+  
+  let { SocketConnect, SocketDisconnect,LoadUser,site, getSite, GetGeneralSetting} = props
   moment.locale('id');
   const { locale, location, direction } = props;
   const currentAppLocale = AppLocale[locale];
@@ -32,6 +39,12 @@ export const Views = (props) => {
   useEffect(()=> {
     LoadUser()
   },[LoadUser])
+  
+  useEffect(()=> {
+    if(!site?.loading){
+      document.title = [site?.opt_value,process.env.REACT_APP_TITLE].join(' | ') ?? process.env.REACT_APP_TITLE ?? "SKRIPSI"
+    }
+  },[site])
   
   return (
     <IntlProvider
@@ -57,10 +70,11 @@ export const Views = (props) => {
   )
 }
 
-const mapStateToProps = ({ theme, auth }) => {
+const mapStateToProps = ({ theme, auth,Settings }) => {
   const { locale, direction } =  theme;
+  let { site } = Settings
   const { token } = auth;
-  return { locale, token, direction }
+  return { locale, token, direction, site }
 };
 
 export default withRouter(connect(mapStateToProps,{LoadUser, SocketConnect,SocketDisconnect,getSite,GetGeneralSetting})(Views));

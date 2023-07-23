@@ -9,48 +9,51 @@ import {ArrowLeftOutlined} from "@ant-design/icons";
 import {useHistory} from "react-router-dom";
 
 function mapStateToProps({Settings}) {
-	let { collections } = Settings
+	let { collections,site } = Settings
  return {
+	 site,
 		...collections
  };
 }
 
 function SiteName(props)  {
-	let { general } = props
+	let { general,site } = props
 	const history = useHistory()
 	const [ form ] = Form.useForm();
 	const [ loading, setLoading ] = useState(false)
-	const [initialValues, setInitialValues] = useState({
-		data:null,
-		name:"site_name"
-	})
+	const [initialValues, setInitialValues] = useState({})
 	
 	useEffect(()=> {
-		if(!general.loading){
+		// if(!general.loading && Array.isArray(general.data) && general.data.length > 0){
+		// 	let filtered = general.data.filter((item)=> item.name === 'site_name')
+		// 	if(Array.isArray(filtered) && filtered.length > 0){
+		// 		let item = first(filtered)
+		// 		setInitialValues({
+		// 			...item,
+		// 		})
+		//
+		// 	}
+		// }
+		if(typeof(site) !== 'undefined' && Object.keys(site).length > 0){
+			setInitialValues({
+				...site
+			})
+		}
+	},[site])
+	
+	useEffect(()=> {
+		if(!site?.loading){
 			form.resetFields()
 		}
 		
-	},[general.loading,initialValues])
-	
-	useEffect(()=> {
-		if(!general.loading && Array.isArray(general.data) && general.data.length > 0){
-			let filtered = general.data.filter((item)=> item.name === 'site_name')
-			if(Array.isArray(filtered) && filtered.length > 0){
-				let item = first(filtered)
-				setInitialValues({
-					...item,
-				})
-
-			}
-		}
-	},[general])
+	},[site,initialValues])
 
 	const onSubmit = ()=> {
 		form.validateFields()
 			.then((value)=> {
 				setLoading(true)
 				new ApiService({
-					url:`/api/v1/setting/general`,
+					url:`/api/v1/options/site_name`,
 					body:value
 				})
 					.post()
@@ -76,12 +79,16 @@ function SiteName(props)  {
 		  <div>
 			  {
 					!general?.loading && (
-					  <Form layout={'vertical'} form={form} initialValues={initialValues}>
-						  <Form.Item name={'data'} label={'Site Name'} rules={[{required:true,message:"Can't be empty!"}]}>
+					  <Form layout={'vertical'} form={form} initialValues={{
+							...initialValues,
+						  opt_type: site?.opt_type ?? null,
+						  opt_value: site?.opt_value ?? null,
+					  }}>
+						  <Form.Item name={'opt_value'} label={'Site Name'} rules={[{required:true,message:"Can't be empty!"}]}>
 							  <Input/>
 						  </Form.Item>
-						  <Form.Item name={'name'} hidden label={'Name'} rules={[{required:true,message:"Can't be empty!"}]}>
-							  <Input/>
+						  <Form.Item name={'opt_type'} hidden label={'Site Name'} initialValue={'site'}>
+							  <Input defaultValue={'site'}/>
 						  </Form.Item>
 						  
 						  <Button loading={loading} type={'primary'} onClick={onSubmit}>Submit</Button>

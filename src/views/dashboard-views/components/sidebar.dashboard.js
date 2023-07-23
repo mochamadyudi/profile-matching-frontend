@@ -2,7 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {DashboardRoutes} from "../../../configs/dashboard.routes";
 import {SIDE_NAV_DARK, SIDE_NAV_LIGHT, SIDE_NAV_WIDTH} from "../../../constants/ThemeConstant";
-import {Grid, Layout, Menu} from "antd";
+import {Badge, Grid, Layout, Menu} from "antd";
 import {Scrollbars} from "react-custom-scrollbars";
 import {Link} from "react-router-dom";
 import IntlMessage from "../../../components/util-components/IntlMessage";
@@ -156,10 +156,10 @@ function SubPathComponent (props){
  * @param onMobileNavToggle
  * @param hideGroupTitle
  * @param localization
+ * @param {object} auth
  * @returns {JSX.Element}
- * @constructor
  */
-function SidebarDashboard({navCollapsed, sideNavTheme, routeInfo,onMobileNavToggle, hideGroupTitle, localization = true}) {
+function SidebarDashboard({navCollapsed,auth, sideNavTheme, routeInfo,onMobileNavToggle, hideGroupTitle, localization = true}) {
 
     const isMobile = !utils.getBreakPoint(useBreakpoint()).includes('lg')
     const closeMobileNav = () => {
@@ -205,6 +205,7 @@ function SidebarDashboard({navCollapsed, sideNavTheme, routeInfo,onMobileNavTogg
                 .filter(child => child?.showMenu === true)
                 .filter((child)=> child?.configMenu.hidden === false)
                 .filter((child)=> child?.configMenu.disabled === false)
+                .filter((child)=> child?.roles.filter((child2)=> child2 === auth?.profile?.role?.name ).length > 0)
                 .map((child)=> {
                     return Array.isArray(child.subPath) && child.subPath.length > 0 && child.subPath.filter(child => child?.showMenu === true).length > 0 ?
                         <SubPathComponent
@@ -225,7 +226,33 @@ function SidebarDashboard({navCollapsed, sideNavTheme, routeInfo,onMobileNavTogg
                         <Menu.Item key={child?.key}>
                             {child?.configMenu?.icon ? <Icon type={child.configMenu.icon}/> : null}
                             <span>{setLocale(localization, child?.displayName)}</span>
+                            {
+                                !navCollapsed ? (
+                                <div style={{
+                                    position:"absolute",
+                                    right:15,
+                                    top:0,
+                                    display:"flex",
+                                    alignItems:"center",
+                                    height:'100%'
+                                }}>
+                                    {child?.configMenu?.elRight}
+                                </div>
+                              ): child?.configMenu?.elRight &&
+                                  <div style={{
+                                      position:"absolute",
+                                      right:0,
+                                      top:0,
+                                      display:"flex",
+                                      alignItems:"center",
+                                      height:'100%'
+                                  }}>
+                                      <Badge color={'cyan'} text={''}/>
+                                  </div>
+                            }
+
                             {child?.path ? <Link to={child.path} /> : null}
+
                         </Menu.Item>
                 })
         }
@@ -234,8 +261,8 @@ function SidebarDashboard({navCollapsed, sideNavTheme, routeInfo,onMobileNavTogg
 
 SidebarDashboard.propTypes = {}
 SidebarDashboard.defaultProps = {}
-const mapStateToProps = ({ theme }) => {
+const mapStateToProps = ({ theme,auth }) => {
     const { navCollapsed, sideNavTheme } =  theme;
-    return { navCollapsed, sideNavTheme }
+    return { navCollapsed, sideNavTheme,auth }
 };
 export default connect(mapStateToProps,{ onMobileNavToggle })(React.memo(SidebarDashboard))

@@ -1,6 +1,19 @@
 import {message} from 'antd'
+import {first} from "lodash";
 export *  from './get-path';
 
+
+/**
+ * @param {CALC_GAP[] | []} arr
+ * @param {string} key
+ * @param {number} compare
+ */
+export function calcGap(arr = [],key , compare ){
+    if(!Array.isArray(arr) && arr.length === 0) return null
+    let newArr = arr.filter((child)=> findKey(child,key ?? ['id']) === compare)
+    if(Array.isArray(newArr) && newArr.length === 0) return null
+    return first(newArr)
+}
 export const DeleteObjKey = async (data,key =[])=> {
     try {
         if(typeof(data) !== "undefined" && typeof(data) === "object"){

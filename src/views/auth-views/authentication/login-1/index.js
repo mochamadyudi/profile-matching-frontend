@@ -2,6 +2,7 @@ import React from 'react'
 import LoginForm from '../../components/LoginForm'
 import { Card, Row, Col } from "antd";
 import { useSelector } from 'react-redux';
+import {Link} from "react-router-dom";
 
 
 const LoginOne = props => {
@@ -24,7 +25,11 @@ const LoginOne = props => {
 								</div>
 								<Row justify="center">
 									<Col xs={24} sm={24} md={20} lg={20}>
-										<LoginForm {...props} />
+										<LoginForm {...props} extra={
+											<div className={'text-right'}>
+												<Link to={'/auth/register'}>Sign Up</Link>
+											</div>
+										}/>
 									</Col>
 								</Row>
 							</div>

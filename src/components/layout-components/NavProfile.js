@@ -29,6 +29,11 @@ export const NavProfile = (props) => {
   ]
   const profileImg = "/img/avatars/thumb-1.jpg";
 
+  
+  function OnSignOut(){
+    localStorage.removeItem('token')
+    window.location.href= '/auth/login'
+  }
   return (
     <>
       <Dropdown placement="bottomRight" overlay={<div className="nav-profile nav-dropdown">
@@ -58,7 +63,7 @@ export const NavProfile = (props) => {
                 </Menu.Item>
               );
             })}
-            <Menu.Item key={menuItem.length + 1} onClick={e => signOut()}>
+            <Menu.Item key={menuItem.length + 1} onClick={OnSignOut}>
             <span>
               <LogoutOutlined />
               <span className="font-weight-normal">Sign Out</span>

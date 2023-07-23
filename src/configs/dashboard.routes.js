@@ -10,6 +10,7 @@ import {
 	DashboardOutlined, PlusOutlined, AudioOutlined, CalendarOutlined, EnvironmentOutlined
 } from '@ant-design/icons'
 import {UserGroupIcons} from "../assets/svg/icon";
+import {Badge, Tag} from "antd";
 
 export const MASTER_DATA_PREFIX = '/master-data'
 
@@ -18,7 +19,122 @@ function getPath(path = '/', prefix = DASHBOARD_PREFIX_PATH) {
 	return [prefix, path].join('')
 }
 
+const UserRoutes = [
+	{
+		ordering: 2,
+		key: 'history',
+		guard: true,
+		displayName: "History",
+		showMenu: true,
+		isAvailable: true,
+		configMenu: {
+			icon: () => <DashboardOutlined/>,
+			breadcrumb: false,
+			hidden: false,
+			disabled: false,
+			elRight: null
+		},
+		exact: true,
+		pathMenu: getPath('/history'),
+		path: getPath('/history'),
+		roles: ['user'],
+		permissions: [],
+		Pages: lazy(() => import("../views/user-views/history-pages/overview/index")),
+		subPath: []
+	},
+	{
+		ordering: 2,
+		key: 'wisata.travel',
+		guard: true,
+		displayName: "Travel",
+		showMenu: false,
+		configMenu: {
+			icon: DatabaseOutlined,
+			breadcrumb: false,
+			hidden: false,
+			disabled: false,
+			elRight: <Tag color={'cyan'}>NEW</Tag>
+		},
+		exact: true,
+		isAvailable: true,
+		pathMenu: getPath('/travel/:id'),
+		path: getPath('/travel/:id'),
+		roles: ['user'],
+		permissions: [],
+		Pages: lazy(()=> import('../views/user-views/travel-views/create')),
+		subPath: []
+	},
+	{
+		ordering: 2,
+		key: 'wisata.calculate',
+		guard: true,
+		displayName: "Calculate",
+		showMenu: false,
+		configMenu: {
+			icon: DatabaseOutlined,
+			breadcrumb: false,
+			hidden: false,
+			disabled: false,
+			elRight: <Tag color={'cyan'}>NEW</Tag>
+		},
+		exact: true,
+		isAvailable: true,
+		pathMenu: getPath('/travel/:id/calculate'),
+		path: getPath('/travel/:id/calculate'),
+		roles: ['user'],
+		permissions: [],
+		Pages: lazy(()=> import('../views/dashboard-views/screens/travel-views/screens/calculate-views/index')),
+		subPath: []
+	},
+	{
+		ordering: 1,
+		key: 'wisata.travel',
+		guard: true,
+		displayName: "Rekomendasi Wisata",
+		showMenu: true,
+		configMenu: {
+			icon: DatabaseOutlined,
+			breadcrumb: false,
+			hidden: false,
+			disabled: false,
+			elRight: <Tag color={'cyan'}>NEW</Tag>
+		},
+		exact: true,
+		isAvailable: true,
+		pathMenu: getPath('/travel'),
+		path: getPath('/travel'),
+		roles: ['user'],
+		permissions: [],
+		Pages: lazy(()=> import('../views/user-views/travel-views/recomendation')),
+		subPath: []
+	},
+	{
+		ordering: 0,
+		key: 'dashboard',
+		guard: true,
+		displayName: "Home",
+		showMenu: true,
+		isAvailable: true,
+		configMenu: {
+			icon: () => <DashboardOutlined/>,
+			breadcrumb: false,
+			hidden: false,
+			disabled: false,
+			elRight: null
+		},
+		exact: true,
+		pathMenu: getPath('/'),
+		path: getPath('/'),
+		roles: ['user'],
+		permissions: [],
+		Pages: lazy(() => import("../views/user-views/index")),
+		subPath: []
+	},
+]
+
+
 export const DashboardRoutes = [
+	...UserRoutes,
 	{
 		ordering: 7,
 		key: 'settings',
@@ -36,7 +152,7 @@ export const DashboardRoutes = [
 		isAvailable: true,
 		pathMenu: getPath('/settings'),
 		path: getPath('/settings'),
-		roles: ['admin', 'public', 'operator'],
+		roles: ['admin','super-admin'],
 		permissions: [],
 		Pages: lazy(()=> import('../views/dashboard-views/screens/settings-views/screens/edit-profile.setting')),
 		subPath: [
@@ -57,7 +173,7 @@ export const DashboardRoutes = [
 				isAvailable: true,
 				pathMenu: getPath('/settings/edit-profile '),
 				path: getPath('/settings/edit-profile'),
-				roles: ['admin', 'public', 'operator'],
+				roles: ['admin','super-admin'],
 				permissions: [],
 				Pages: lazy(()=> import('../views/dashboard-views/screens/settings-views/screens/edit-profile.setting')),
 				subPath: []
@@ -79,7 +195,7 @@ export const DashboardRoutes = [
 				isAvailable: true,
 				pathMenu: getPath('/settings/announcement '),
 				path: getPath('/settings/announcement'),
-				roles: ['admin', 'public', 'operator'],
+				roles: ['admin','super-admin'],
 				permissions: [],
 				Pages: lazy(()=> import('../views/dashboard-views/screens/settings-views/screens/announcement')),
 				subPath: []
@@ -101,7 +217,7 @@ export const DashboardRoutes = [
 				isAvailable: true,
 				pathMenu: getPath('/settings/edit-profile'),
 				path: getPath('/settings/edit-profile'),
-				roles: ['admin', 'public', 'operator'],
+				roles: ['admin','super-admin'],
 				permissions: [],
 				Pages: React.lazy(() => import("../views/dashboard-views/screens/settings-views/screens/edit-profile.setting")),
 				subPath: []
@@ -123,7 +239,7 @@ export const DashboardRoutes = [
 				isAvailable: true,
 				pathMenu: getPath('/settings/change-password'),
 				path: getPath('/settings/change-password'),
-				roles: ['admin', 'public', 'operator'],
+				roles: ['admin','super-admin'],
 				permissions: [],
 				Pages: React.lazy(() => import("../views/dashboard-views/screens/settings-views/screens/change-password.setting")),
 				subPath: []
@@ -145,7 +261,7 @@ export const DashboardRoutes = [
 				isAvailable: true,
 				pathMenu: getPath('/settings/license'),
 				path: getPath('/settings/license'),
-				roles: ['admin', 'public', 'operator'],
+				roles: ['admin','super-admin'],
 				permissions: [],
 				Pages: React.lazy(() => import("../views/dashboard-views/screens/settings-views/screens/license.setting")),
 				subPath: []
@@ -167,7 +283,7 @@ export const DashboardRoutes = [
 				isAvailable: true,
 				pathMenu: getPath('/settings/options'),
 				path: getPath('/settings/options'),
-				roles: ['admin', 'public', 'operator'],
+				roles: ['admin','super-admin'],
 				permissions: [],
 				Pages: React.lazy(() => import("../views/dashboard-views/screens/settings-views/screens/options.setting")),
 				subPath: [
@@ -188,7 +304,7 @@ export const DashboardRoutes = [
 						isAvailable: true,
 						pathMenu: getPath('/settings/options'),
 						path: getPath('/settings/options'),
-						roles: ['admin', 'public', 'operator'],
+						roles: ['admin','super-admin'],
 						permissions: [],
 						Pages: React.lazy(() => import("../views/dashboard-views/screens/settings-views/screens/options.setting")),
 						subPath: []
@@ -210,7 +326,7 @@ export const DashboardRoutes = [
 						isAvailable: true,
 						pathMenu: getPath('/settings/options/site-name'),
 						path: getPath('/settings/options/site-name'),
-						roles: ['admin', 'public', 'operator'],
+						roles: ['admin','super-admin'],
 						permissions: [],
 						Pages: React.lazy(() => import("../views/dashboard-views/screens/settings-views/screens/options/site-name")),
 						subPath: []
@@ -236,7 +352,7 @@ export const DashboardRoutes = [
 		isAvailable: true,
 		pathMenu: getPath('/master-data'),
 		path: getPath('/master-data'),
-		roles: ['admin', 'public', 'operator'],
+		roles: ['admin','super-admin'],
 		permissions: [],
 		Pages: lazy(()=> import('../views/dashboard-views/screens/settings-views/screens/edit-profile.setting')),
 		subPath: [
@@ -257,7 +373,7 @@ export const DashboardRoutes = [
 				isAvailable: true,
 				pathMenu: getPath('/master-data/category'),
 				path: getPath('/master-data/category'),
-				roles: ['admin', 'public', 'operator'],
+				roles: ['admin','super-admin'],
 				permissions: [],
 				Pages: lazy(()=> import('../views/dashboard-views/screens/master-data-views/screens/category/overviews')),
 				subPath: [
@@ -278,7 +394,7 @@ export const DashboardRoutes = [
 						isAvailable: true,
 						pathMenu: getPath('/master-data/category'),
 						path: getPath('/master-data/category'),
-						roles: ['admin', 'public', 'operator'],
+						roles: ['admin','super-admin'],
 						permissions: [],
 						Pages: lazy(()=> import('../views/dashboard-views/screens/master-data-views/screens/category/overviews')),
 						subPath: []
@@ -300,7 +416,7 @@ export const DashboardRoutes = [
 						isAvailable: true,
 						pathMenu: getPath('/master-data/category/create'),
 						path: getPath('/master-data/category/create'),
-						roles: ['admin', 'public', 'operator'],
+						roles: ['admin','super-admin'],
 						permissions: [],
 						Pages: lazy(()=> import('../views/dashboard-views/screens/master-data-views/screens/category/create')),
 						subPath: []
@@ -324,7 +440,7 @@ export const DashboardRoutes = [
 				isAvailable: true,
 				pathMenu: getPath('/master-data/category-value'),
 				path: getPath('/master-data/category-value'),
-				roles: ['admin', 'public', 'operator'],
+				roles: ['admin','super-admin'],
 				permissions: [],
 				Pages: lazy(()=> import('../views/dashboard-views/screens/master-data-views/screens/category_value/overviews')),
 				subPath: [
@@ -345,7 +461,7 @@ export const DashboardRoutes = [
 						isAvailable: true,
 						pathMenu: getPath('/master-data/category-value'),
 						path: getPath('/master-data/category-value'),
-						roles: ['admin', 'public', 'operator'],
+						roles: ['admin','super-admin'],
 						permissions: [],
 						Pages: lazy(()=> import('../views/dashboard-views/screens/master-data-views/screens/category_value/overviews')),
 						subPath: []
@@ -367,7 +483,7 @@ export const DashboardRoutes = [
 						isAvailable: true,
 						pathMenu: getPath('/master-data/category-value/create'),
 						path: getPath('/master-data/category-value/create'),
-						roles: ['admin', 'public', 'operator'],
+						roles: ['admin','super-admin'],
 						permissions: [],
 						Pages: lazy(()=> import('../views/dashboard-views/screens/master-data-views/screens/category_value/create')),
 						subPath: []
@@ -391,7 +507,7 @@ export const DashboardRoutes = [
 				isAvailable: true,
 				pathMenu: getPath('/master-data/criteria'),
 				path: getPath('/master-data/criteria'),
-				roles: ['admin', 'public', 'operator'],
+				roles: ['admin','super-admin'],
 				permissions: [],
 				Pages: lazy(()=> import('../views/dashboard-views/screens/master-data-views/screens/criteria-views/overviews')),
 				subPath: [
@@ -412,7 +528,7 @@ export const DashboardRoutes = [
 						isAvailable: true,
 						pathMenu: getPath('/master-data/criteria'),
 						path: getPath('/master-data/criteria'),
-						roles: ['admin', 'public', 'operator'],
+						roles: ['admin','super-admin'],
 						permissions: [],
 						Pages: lazy(()=> import('../views/dashboard-views/screens/master-data-views/screens/criteria-views/overviews')),
 						subPath: []
@@ -434,7 +550,7 @@ export const DashboardRoutes = [
 						isAvailable: true,
 						pathMenu: getPath('/master-data/criteria/create'),
 						path: getPath('/master-data/criteria/create'),
-						roles: ['admin', 'public', 'operator'],
+						roles: ['admin','super-admin'],
 						permissions: [],
 						Pages: lazy(()=> import('../views/dashboard-views/screens/master-data-views/screens/criteria-views/create')),
 						subPath: []
@@ -460,7 +576,7 @@ export const DashboardRoutes = [
 		isAvailable: true,
 		pathMenu: getPath('/travel'),
 		path: getPath('/travel'),
-		roles: ['admin', 'public', 'operator'],
+		roles: ['admin','super-admin'],
 		permissions: [],
 		Pages: lazy(()=> import('../views/dashboard-views/screens/travel-views/overviews')),
 		subPath: [
@@ -481,7 +597,7 @@ export const DashboardRoutes = [
 				isAvailable: true,
 				pathMenu: getPath('/travel'),
 				path: getPath('/travel'),
-				roles: ['admin', 'public', 'operator'],
+				roles: ['admin','super-admin'],
 				permissions: [],
 				Pages: lazy(()=> import('../views/dashboard-views/screens/travel-views/overviews')),
 				subPath: [
@@ -502,7 +618,7 @@ export const DashboardRoutes = [
 						isAvailable: true,
 						pathMenu: getPath('/travel'),
 						path: getPath('/travel'),
-						roles: ['admin', 'public', 'operator'],
+						roles: ['admin','super-admin'],
 						permissions: [],
 						Pages: lazy(()=> import('../views/dashboard-views/screens/travel-views/overviews')),
 						subPath: [
@@ -525,7 +641,7 @@ export const DashboardRoutes = [
 						isAvailable: true,
 						pathMenu: getPath('/travel/:id/show'),
 						path: getPath('/travel/:id/show'),
-						roles: ['admin', 'public', 'operator'],
+						roles: ['admin','super-admin'],
 						permissions: [],
 						Pages: lazy(()=> import('../views/dashboard-views/screens/travel-views/show')),
 						subPath: [
@@ -548,7 +664,7 @@ export const DashboardRoutes = [
 						isAvailable: true,
 						pathMenu: getPath('/travel/:id/show/calculate'),
 						path: getPath('/travel/:id/show/calculate'),
-						roles: ['admin', 'public', 'operator'],
+						roles: ['admin','super-admin'],
 						permissions: [],
 						Pages: lazy(()=> import('../views/dashboard-views/screens/travel-views/screens/calculate-views')),
 						subPath: [
@@ -571,7 +687,7 @@ export const DashboardRoutes = [
 						isAvailable: true,
 						pathMenu: getPath('/travel/create'),
 						path: getPath('/travel/create'),
-						roles: ['admin', 'public', 'operator'],
+						roles: ['admin','super-admin'],
 						permissions: [],
 						Pages: lazy(()=> import('../views/dashboard-views/screens/travel-views/create')),
 						subPath: [
@@ -581,7 +697,6 @@ export const DashboardRoutes = [
 			},
 		]
 	},
-	
 	{
 		ordering: 0,
 		key: 'dashboard',
@@ -599,7 +714,7 @@ export const DashboardRoutes = [
 		exact: true,
 		pathMenu: getPath(''),
 		path: getPath(''),
-		roles: ['admin', 'public', 'operator'],
+		roles: ['admin','super-admin'],
 		permissions: [],
 		Pages: lazy(() => import("../views/dashboard-views/screens/home/overview")),
 		subPath: []

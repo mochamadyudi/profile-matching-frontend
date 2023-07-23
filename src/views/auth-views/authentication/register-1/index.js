@@ -2,6 +2,7 @@ import React from 'react'
 import RegisterForm from '../../components/RegisterForm'
 import { Card, Row, Col } from "antd";
 import { useSelector } from 'react-redux'
+import {Link} from "react-router-dom";
 
 const backgroundStyle = {
 	backgroundImage: 'url(/img/others/img-17.jpg)',
@@ -19,12 +20,24 @@ const RegisterOne = props => {
 						<Card>
 							<div className="my-2">
 								<div className="text-center">
-								<img className="img-fluid" src={`/img/${theme === 'light' ? 'logo.png': 'logo-white.png'}`} alt="" />
+								<img
+									className="img-fluid"
+									src={`/${theme === 'light' ? 'logo.png': 'logo.png'}`} alt="logo-fids-notifbox"
+									style={{
+										height:'26px',
+										objectFit:"contain",
+										marginTop:20,
+									}}
+								/>
 									<p className="text-muted">Create a new account:</p>
 								</div>
 								<Row justify="center">
 									<Col xs={24} sm={24} md={20} lg={20}>
-										<RegisterForm {...props}/>
+										<RegisterForm {...props} extra={
+											<div className={'text-right'}>
+												<Link to={'/auth/login'}>Sign In</Link>
+											</div>
+										}/>
 									</Col>
 								</Row>
 							</div>
